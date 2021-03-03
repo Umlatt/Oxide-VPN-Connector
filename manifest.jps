@@ -6,12 +6,12 @@ name: Extend to private network
 baseUrl: https://raw.githubusercontent.com/data-sciences-corporation/oxide-vpn-connector/master
 logo: images/logo.png
 
-homepage: https://www.datasciences.co.za
+homepage: http://support.datasciences.co.za/
 description:
   short: A Oxide-2-Customer network stretching tool (using VPN tunneling)
   text: |
     Connect this node to your private stretched network. 
-    *Please note that the requisite tunnel needs to be created with the Oxide support team, before this tool is usable.
+    *Please note that the tunnel needs to be configured by the Oxide support team before this service will work as required.
 
 globals:
     hardnode: hn09
