@@ -2,7 +2,7 @@ type: update
 version: 0.1
 
 id: connect-private-network
-name: Extend to private network
+name: Connection to private network
 baseUrl: https://raw.githubusercontent.com/data-sciences-corporation/oxide-vpn-connector/master
 logo: images/logo.png
 
@@ -11,7 +11,7 @@ description:
   short: A Oxide-2-Customer network stretching tool (using VPN tunneling)
   text: |
     Connect this node to your private stretched network. 
-    *Please note that the tunnel needs to be configured by the Oxide support team before this service will work as required.
+    *Please note that the tunnel needs to be configured by the Oxide support team (Data Sciences Corporation) before this service will work as required.
 
 globals:
     hardnode: hn09
@@ -28,12 +28,13 @@ onUninstall:
     - uninstall
 
 actions:
+    user: root
     attach-vz-interface:
         - cmd[*]: |-
-            systemctl restart network
-    user: root
-
-    uninstall: 
+            touch /root/test-file
+    uninstall:
+        - cmd[*]: |-
+            rm -rf /root/test-file
 
 success: Your node has been connected to your stretched network.
     The node IP is ${globals.subnet}
