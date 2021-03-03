@@ -1,0 +1,44 @@
+type: update
+version: 1.0
+
+id: connect-mobile-vpn
+name: VPN for Connect Mobile
+baseUrl: https://raw.githubusercontent.com/jelastic-jps/openvpn-as/master
+logo: images/logo.png
+
+homepage: https://www.datasciences.co.za
+description:
+  short: A Oxide-2-Customer network stretch tool (using VPN tehchnologies)
+  text: |
+    When a customer needs to extend thier network, securley, into the Oxide platform, 
+    they can use this tool to connect a container/vm to thier network (using VPN tunneling).
+    *Please note that the requisite tunnel needs to be created with the Oxide support team, before this tool is consumable.
+
+targetNodes:
+  nodeType: [
+    'tomcat6', 'tomcat7', 'tomcat8', 'tomcat85', 'tomcat9', 'tomcat',
+    'tomee', 'tomee-dockerized',
+    'jetty6', 'jetty8', 'jetty9',
+    'apache', 'apache2',
+    'nginxphp', 'nginxphp-dockerized',
+    'apache2-ruby', 'nginx-ruby',
+    'nginx', 'nginx-dockerized',
+    'haproxy',
+    'apache-lb',
+    'varnish', 'varnish-dockerized',
+    'payara',
+    'golang',
+    'nodejs',
+    'wildfly',
+    'springboot',
+    'storage',
+    'cassandra2', 'cassandra3',
+    'couchbase',
+    'couchdb',
+    'mongodb', 'mongodb2',
+    'redis', 'redis3', 'redis4',
+    'mariadb', 'mariadb10', 'mariadb-dockerized',
+    'mysql', 'mysql5', 'mysql5-6',
+    'postgresql', 'postgres', 'postgres9',
+    'maven', 'maven3',
+    'centos6', 'centos7', 'dockerengine']
