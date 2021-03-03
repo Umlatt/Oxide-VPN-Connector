@@ -1,44 +1,41 @@
 type: update
-version: 1.0
+version: 0.1
 
 id: connect-private-network
 name: Extend to private network
-baseUrl: https://raw.githubusercontent.com/jelastic-jps/openvpn-as/master
+baseUrl: https://raw.githubusercontent.com/data-sciences-corporation/oxide-vpn-connector/master
 logo: images/logo.png
 
 homepage: https://www.datasciences.co.za
 description:
   short: A Oxide-2-Customer network stretching tool (using VPN tunneling)
   text: |
-    When a customer needs to extend thier network, securley, into the Oxide platform, 
-    they can use this tool to connect a container/vm to thier network (using VPN tunneling).
-    *Please note that the requisite tunnel needs to be created with the Oxide support team, before this tool is consumable.
+    Connect this node to your private stretched network. 
+    *Please note that the requisite tunnel needs to be created with the Oxide support team, before this tool is usable.
+
+globals:
+    hardnode: hn09
+    customer: cm
+    subnet: '10.3.0.0'
 
 targetNodes:
-  nodeType: [
-    'tomcat6', 'tomcat7', 'tomcat8', 'tomcat85', 'tomcat9', 'tomcat',
-    'tomee', 'tomee-dockerized',
-    'jetty6', 'jetty8', 'jetty9',
-    'apache', 'apache2',
-    'nginxphp', 'nginxphp-dockerized',
-    'apache2-ruby', 'nginx-ruby',
-    'nginx', 'nginx-dockerized',
-    'haproxy',
-    'apache-lb',
-    'varnish', 'varnish-dockerized',
-    'payara',
-    'golang',
-    'nodejs',
-    'wildfly',
-    'springboot',
-    'storage',
-    'cassandra2', 'cassandra3',
-    'couchbase',
-    'couchdb',
-    'mongodb', 'mongodb2',
-    'redis', 'redis3', 'redis4',
-    'mariadb', 'mariadb10', 'mariadb-dockerized',
-    'mysql', 'mysql5', 'mysql5-6',
-    'postgresql', 'postgres', 'postgres9',
-    'maven', 'maven3',
-    'centos6', 'centos7', 'dockerengine']
+    nodeGroup: '*'
+
+onInstall:
+    - attach-vz-interface
+
+onUninstall:
+    - uninstall
+
+actions:
+    attach-vz-interface:
+        - cmd[*]: |-
+        systemctl restart network
+    user: root
+
+    uninstall: 
+
+
+
+success: Your node has been connected to your stretched network.
+The node IP is ${globals.subnet}
