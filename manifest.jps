@@ -30,12 +30,10 @@ onUninstall:
 actions:
     attach-vz-interface:
         - cmd[*]: |-
-        systemctl restart network
+            systemctl restart network
     user: root
 
     uninstall: 
 
-
-
 success: Your node has been connected to your stretched network.
-The node IP is ${globals.subnet}
+    The node IP is ${globals.subnet}
