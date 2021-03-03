@@ -1,14 +1,14 @@
 type: update
 version: 1.0
 
-id: connect-mobile-vpn
-name: VPN for Connect Mobile
+id: connect-private-network
+name: Extend to private network
 baseUrl: https://raw.githubusercontent.com/jelastic-jps/openvpn-as/master
 logo: images/logo.png
 
 homepage: https://www.datasciences.co.za
 description:
-  short: A Oxide-2-Customer network stretch tool (using VPN tehchnologies)
+  short: A Oxide-2-Customer network stretching tool (using VPN tunneling)
   text: |
     When a customer needs to extend thier network, securley, into the Oxide platform, 
     they can use this tool to connect a container/vm to thier network (using VPN tunneling).
