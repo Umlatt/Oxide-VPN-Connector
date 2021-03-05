@@ -14,9 +14,8 @@ description:
     *Please note that the tunnel needs to be configured by the Oxide support team (Data Sciences Corporation) before this service will work as required.
 
 globals:
-    hardnode: hn09
     customer: cm
-    subnet: '10.3.0.0'
+    subnet: '10.21.0.0'
 
 targetNodes:
     nodeGroup: '*'
